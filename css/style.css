@@ -41,5 +41,6 @@ img {
 }
 
 .card.flip {
-    transform: rotatey(-180deg);
+    transform: rotateY(180deg);
+    transform: rotateX(180deg);
 }
