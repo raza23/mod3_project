@@ -24,13 +24,20 @@ div#game {
     padding-bottom: 30px;
   }
   
-div.card {
+.card {
     background-color: #4693a7;
     height: 200px;
     width: 200px;
     box-shadow: 5px 5px 5px 5px rgb(28, 226, 240);
     padding: 10px;
     border-radius: 10px;
+    position: relative;
+    transform: scale(1);
+}
+
+.card:active {
+    transform: scale(0.97);
+    transition: transform .2s;
 }
 
 img {
@@ -40,7 +47,11 @@ img {
     padding: 3px
 }
 
-.card.flip {
+/* .card.flip {
     transform: rotateY(180deg);
-    transform: rotateX(180deg);
+} */
+
+.front-image,
+.back-image {
+    position: absolute;
 }
