@@ -14,3 +14,32 @@ h1 {
     flex-wrap: wrap;
     justify-content: space-evenly;
 }
+
+div#game {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 20px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+  }
+  
+div.card {
+    background-color: #4693a7;
+    height: 200px;
+    width: 200px;
+    box-shadow: 5px 5px 5px 5px rgb(28, 226, 240);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+img {
+    height: 90%;
+    width: 90%;
+    border-radius: 3px;
+    padding: 3px
+}
+
+.card.flip {
+    transform: rotatey(-180deg);
+}
