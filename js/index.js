@@ -1,3 +1,4 @@
+
 const gameDiv = document.querySelector("#game")
 const cardsUrl = "http://localhost:3000/cards"
 // const cardGrid = document.querySelector(".card-grid")
