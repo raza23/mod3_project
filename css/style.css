@@ -29,23 +29,26 @@ div#game {
 }
   
 .card-grid {
-    width: 700px;
-    height: 700px;
-    margin: auto;
+    max-width: 930px;
+    max-height: 700px;
     display: flex;
     flex-wrap: wrap;
     perspective: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
   
 .card {
-    width: 150px;
-    height: 150px;
+    width: 133px;
+    height: 133px;
     margin: 5px;
     position: relative;
     transform: scale(1);
     transform-style: preserve-3d;
     transition: transform .5s;
-    box-shadow: 1px 1px 1px rgba(33, 30, 49, 0.3);
+    box-shadow: 1px 1px 1px rgba(72, 51, 192, 0.3);
 }
   
 .card:active {
@@ -64,7 +67,7 @@ div#game {
     padding: 20px;
     position: absolute;
     border-radius: 5px;
-    background: #1C7CCC;
+    background: rgb(53, 166, 185);
     backface-visibility: hidden;
 }
   

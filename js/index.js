@@ -43,8 +43,6 @@ function renderCard(card) {
 let hasFlippedCard = false;
 let firstCard, secondCard;
 
-
-
 function flipCard(e) {
     this.classList.add('flip');
     
@@ -66,28 +64,9 @@ function flipCard(e) {
         }
     }
 
-    
-
-    
-    // alert("you clicked me!")
-    // e.target.parentNode.classList.toggle('flip')
-    // if (e.target.parentNode.classList === "card-flip") {
-    //     e.target.src = backImg.src
-    // } if (e.target.parentNode.classList === "card") {
-    //     e.target.src = card.image_src
-    // } 
-    
-
 }
 
-// let allCards = document.querySelectorAll('.card')
-// console.log(allCards)
 
-// console.log(allCards)
-// let levelOneCards = allCards.filter(card => card.level === 1)
-// console.log(levelOneCards)
-// let levelTwoCards = allCards.filter(card => card.level === 2)
-// let levelThreeCards = allCards.filter(card => card.level ===3)
 
 
 
