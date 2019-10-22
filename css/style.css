@@ -1,6 +1,18 @@
+/* adds reset to all items */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* handles how padding and border are added to the element */
+    /* the default is content-box which means that any padding and 
+    border added to the element will add to its total width and height
+    border-box adds padding and margin to the element without changing its dimentions*/
+}
+
 body {
     margin: 20px 0;
     background: #148bb9;
+    height: 100vh;
 }
 
 h1 {
@@ -17,49 +29,45 @@ div#game {
 }
   
 .card-grid {
-    max-width: 960px;
-    margin: 0 auto;
+    width: 700px;
+    height: 700px;
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
     perspective: 1000px;
 }
   
 .card {
-    background-color: #4693a7;
-    height: 200px;
-    width: 200px;
-    box-shadow: 5px 5px 5px 5px rgb(28, 226, 240);
-    padding: 10px;
-    border-radius: 10px;
+    width: 150px;
+    height: 150px;
+    margin: 5px;
     position: relative;
     transform: scale(1);
     transform-style: preserve-3d;
-    transition: transform 0.5s;
+    transition: transform .5s;
+    box-shadow: 1px 1px 1px rgba(33, 30, 49, 0.3);
 }
-
+  
 .card:active {
     transform: scale(0.97);
     transition: transform .2s;
 }
-
-img {
-    height: 90%;
-    width: 90%;
-    border-radius: 3px;
-    padding: 3px
-}
-
+  
 .card.flip {
     transform: rotateY(180deg);
 }
-
+  
 .front-image,
 .back-image {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
     position: absolute;
+    border-radius: 5px;
+    background: #1C7CCC;
     backface-visibility: hidden;
 }
-
+  
 .front-image {
     transform: rotateY(180deg);
 }
