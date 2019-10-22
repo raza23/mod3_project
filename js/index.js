@@ -5,14 +5,12 @@ const cardsUrl = "http://localhost:3000/cards"
 // getLevelOne()
 getLevelTwo()
 
-// gameGrid.sort(() => 0.5 - Math.random());
-
 function getLevelOne() {
     return fetch(cardsUrl)
     .then(resp => resp.json())
     .then(function(cards) {
         let filteredCards = cards.filter(card => card.level === 1)
-        filteredCards.concat(filteredCards).forEach(card => renderCard(card))
+        filteredCards.concat(filteredCards).sort(() => 0.5 - Math.random()).forEach(card => renderCard(card))
     })
 }
 
@@ -43,7 +41,7 @@ function renderCard(card) {
         e.target.parentNode.classList.toggle('flip')
         if (e.target.parentNode.classList === "card-flip") {
             e.target.src = backImg.src
-        } if (e.target.src === backImg.src) {
+        } if (e.target.parentNode.classList === "card") {
             e.target.src = card.image_src
         } 
         // e.target.src = card.image_src
