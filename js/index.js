@@ -39,10 +39,11 @@ function renderCard(card) {
     cardDiv.append(cardImg, backImg)
     cardGrid.appendChild(cardDiv)
     cardDiv.addEventListener('click', function flipCard(e) {
+        // alert("you clicked me!")
         e.target.parentNode.classList.toggle('flip')
         if (e.target.parentNode.classList === "card-flip") {
             e.target.src = backImg.src
-        } if (e.target.parentNode.classList === "card") {
+        } if (e.target.src === backImg.src) {
             e.target.src = card.image_src
         } 
         // e.target.src = card.image_src
