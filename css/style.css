@@ -16,7 +16,9 @@ body {
 }
 
 h1 {
-    text-align: center
+    text-align: center;
+    letter-spacing: 15px;
+    word-spacing: 10px;
 }
 
 div#game {
@@ -41,8 +43,8 @@ div#game {
 }
   
 .card {
-    width: 133px;
-    height: 133px;
+    width: 150px;
+    height: 150px;
     margin: 5px;
     position: relative;
     transform: scale(1);
