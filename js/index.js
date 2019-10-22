@@ -5,18 +5,24 @@ const cardsUrl = "http://localhost:3000/cards"
 // getLevelOne()
 getLevelTwo()
 
+// gameGrid.sort(() => 0.5 - Math.random());
+
 function getLevelOne() {
     return fetch(cardsUrl)
     .then(resp => resp.json())
-    .then(cards => cards.filter(card => card.level === 1)
-    .forEach(card => renderCard(card)))
+    .then(function(cards) {
+        let filteredCards = cards.filter(card => card.level === 1)
+        filteredCards.concat(filteredCards).forEach(card => renderCard(card))
+    })
 }
 
 function getLevelTwo() {
     return fetch(cardsUrl)
     .then(resp => resp.json())
-    .then(cards => cards.filter(card => card.level === 2)
-    .forEach(card => renderCard(card)))
+    .then(function(cards) {
+        let filteredCards = cards.filter(card => card.level === 2)
+        filteredCards.concat(filteredCards).sort(() => 0.5 - Math.random()).forEach(card => renderCard(card))
+    })
 }
 
 function renderCard(card) {
@@ -33,19 +39,18 @@ function renderCard(card) {
     cardDiv.append(cardImg, backImg)
     cardGrid.appendChild(cardDiv)
     cardDiv.addEventListener('click', function flipCard(e) {
-        // alert("you clicked me!")
         e.target.parentNode.classList.toggle('flip')
-        if (e.target.src === card.image_src) {
+        if (e.target.parentNode.classList === "card-flip") {
             e.target.src = backImg.src
-        } if (e.target.src === backImg.src) {
+        } if (e.target.parentNode.classList === "card") {
             e.target.src = card.image_src
         } 
         // e.target.src = card.image_src
     })
 }
 
-let allCards = document.querySelectorAll('.card')
-console.log(allCards)
+// let allCards = document.querySelectorAll('.card')
+// console.log(allCards)
 
 // console.log(allCards)
 // let levelOneCards = allCards.filter(card => card.level === 1)
@@ -55,3 +60,10 @@ console.log(allCards)
 
 
 
+
+
+
+
+  
+
+  

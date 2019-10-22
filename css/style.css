@@ -1,6 +1,18 @@
+/* adds reset to all items */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* handles how padding and border are added to the element */
+    /* the default is content-box which means that any padding and 
+    border added to the element will add to its total width and height
+    border-box adds padding and margin to the element without changing its dimentions*/
+}
+
 body {
     margin: 20px 0;
     background: #148bb9;
+    height: 100vh;
 }
 
 h1 {
@@ -17,7 +29,8 @@ div#game {
 }
   
 .card-grid {
-    max-width: 960px;
+    border: 3px, solid, aqua;
+    max-width: 700px;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -27,25 +40,27 @@ div#game {
   
 .card {
     background-color: #4693a7;
-    height: 200px;
-    width: 200px;
-    box-shadow: 5px 5px 5px 5px rgb(28, 226, 240);
+    height: 150px;
+    width: 150px;
+    box-shadow: 10px 10px 10px 10px rgb(28, 226, 240);
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 5px;
     position: relative;
     transform: scale(1);
     transform-style: preserve-3d;
-    transition: transform 0.5s;
+    transition: transform 1s;
+    margin: 5px;
 }
 
 .card:active {
-    transform: scale(0.97);
+    transform: scale(0.95);
+    /* when clicked image becomes 95% size */
     transition: transform .2s;
 }
 
 img {
-    height: 90%;
-    width: 90%;
+    height: 89%;
+    width: 89%;
     border-radius: 3px;
     padding: 3px
 }
@@ -57,7 +72,10 @@ img {
 .front-image,
 .back-image {
     position: absolute;
+    padding: 5px;
     backface-visibility: hidden;
+    background: #148bb9;
+    border-radius: 5px;
 }
 
 .front-image {
