@@ -6,14 +6,6 @@ body {
 h1 {
     text-align: center
 }
-  
-.card-grid {
-    max-width: 960px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-}
 
 div#game {
     display: grid;
@@ -22,7 +14,16 @@ div#game {
     grid-gap: 20px;
     padding-top: 10px;
     padding-bottom: 30px;
-  }
+}
+  
+.card-grid {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    perspective: 1000px;
+}
   
 .card {
     background-color: #4693a7;
@@ -33,6 +34,8 @@ div#game {
     border-radius: 10px;
     position: relative;
     transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
 }
 
 .card:active {
@@ -47,11 +50,16 @@ img {
     padding: 3px
 }
 
-/* .card.flip {
+.card.flip {
     transform: rotateY(180deg);
-} */
+}
 
 .front-image,
 .back-image {
     position: absolute;
+    backface-visibility: hidden;
+}
+
+.front-image {
+    transform: rotateY(180deg);
 }
