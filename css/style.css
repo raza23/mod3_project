@@ -11,7 +11,7 @@
 
 body {
     margin: 20px 0;
-    background: #148bb9;
+    background: #148bb9 !important;
     height: 100vh;
 }
 
@@ -83,17 +83,29 @@ div#game {
     transform: rotateY(180deg);
 }
 
-.shuffle-button {
+button {
     background-color: white;
     border: none;
     color: #008CBA;
-    padding: 15px 32px;
+    padding: 5px 95px 5px 95px;
     text-align: center;
     text-decoration: none;
-    display: flex;
+    display: inline-block;
     align-items: center;
     justify-content: center;
     font-size: 16px;
     margin: 0 auto;
     border-radius: 5px;
+}
+
+div#navigation {
+    max-width: 960px;
+    max-height: 200px;
+    display: flex;
+    flex-wrap: wrap;
+    perspective: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 }
