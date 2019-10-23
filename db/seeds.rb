@@ -42,3 +42,10 @@ hanaa = Card.create(name: 'Hanaa',level:2,image_src: 'images/hanaaS.jpeg')
 shivang = Card.create(name: 'Shivang',level:2,image_src: 'images/shivangD.png')
 evans = Card.create(name: 'Evans',level:2, image_src: 'images/evansW.jpeg')
 maddie = Card.create(name: 'Maddie', level: 2, image_src: 'images/maddie.png')
+
+
+####
+
+raza_u = User.create(username: "Raza",clicks: '20',time: '4:20')
+justyna_u = User.create(username: "Justyna",clicks: '26',time: '5:00')
+nick_u = User.create(username: "Nick", clicks: '80', time: '9:23')

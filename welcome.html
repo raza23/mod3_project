@@ -53,15 +53,30 @@
                 opacity: 1;
                 transition: all 1s ease 2s;
             }
+            .login {
+                display: block;
+                text-align: center;
+                font-size: 2em;
+                text-decoration: none;
+                text-transform: uppercase;
+                color:  #d4fc0c;
+                opacity: 1;
+                transition: all 1s ease 2s;
+
+            }
+
             
+            /* .welcome-section.content-hidden .content-wrap .fly-in-text li { opacity: 0; } */
             .welcome-section.content-hidden .content-wrap .fly-in-text li { opacity: 0; }
             .welcome-section.content-hidden .content-wrap .fly-in-text li:nth-child(1) { transform: translate3d(-100px, 0, 0); }
             .welcome-section.content-hidden .content-wrap .fly-in-text li:nth-child(2) { transform: translate3d(100px, 0, 0); }
             .welcome-section.content-hidden .content-wrap .enter-button { opacity: 0; transform: translate3d(0, -30px, 0); }
             
+            
             @media (min-width: 800px) {
                 .welcome-section .content-wrap .fly-in-text li { font-size: 10em; }
                 .welcome-section .content-wrap .enter-button { font-size: 1.5em; }
+                
             }
             
             
@@ -77,11 +92,18 @@
                     <li>Welcome</li>
                     <li>To </li>
                     <li>CardBack</li>
-                    
-                </ul>
-                <a href="./index.html" class="enter-button">Enter</a>
+                    <form class = 'login'>Username:<br>
+                    <input type="text" class="username-value" name="username"</br>
+                </form>
+                
+            </ul>
+            <a href="./index.html" class="enter-button">Enter</a>
             </div>
         </div>
+        <script defer src="js/welcome.js"></script>
+
+        
+        
         
         
         
