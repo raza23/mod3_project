@@ -4,15 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script defer src="node_modules/swup/dist/swup.min.js"></script>
-    <title>Welcome To CardBack</title>
+  <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
 </head>
 <body>
     <nav>
-        <ul>
-            <li><a href="./index.html">Time to Play</a></li>
-        </ul>
+        <ul class ="nav-list">
+            <li><a class = "nav-links" href="./index.html">PLAY</a></li>
+            <li><a class = "nav-links" href="#">Top Scores</a></li>
     </nav>
+
+
+    <main data-router-wrapper>
+        <section data-router-view = "home" class = "home">
+            <div class ="home-content">
+                <div class = "home-presentation">
+                    <h1 class="title1"> CARDBACK</h1>
+                    <!-- <p class ="title1">wokring wokring</p> -->
+
+                </div>
+                <img src="./images/cardshuffle.gif" class="snoopy" alt ="home">
+
+            </div>
+        </section>
+    </main>
+
     
+    <script defer src="js/index.js"></script>
 </body>
 </html>

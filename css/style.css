@@ -76,3 +76,54 @@ div#game {
 .front-image {
     transform: rotateY(180deg);
 }
+
+
+
+
+.nav-list{
+    height: 10vh;
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+    align-items: center;
+    margin-left: auto;
+    list-style: none;
+}
+
+.nav-links {
+    text-decoration: none;
+    color: white
+}
+
+/* .snoopy {
+    position: center;
+    height: 10%
+} */
+
+.title1{
+    text-align: center;
+    color: white;
+}
+
+.home{
+    height: 90vh;
+    width: 100%;
+    position: absolute;
+}
+
+.home-content {
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center; }
+.home-content.img  { 
+        height: 70%;
+    }
+    /* h1 {
+        font-size: 50px;
+        margin: 30px 0px;
+    }  */
+
+
+
+

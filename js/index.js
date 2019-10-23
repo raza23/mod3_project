@@ -1,6 +1,14 @@
 
 const gameDiv = document.querySelector("#game")
 const cardsUrl = "http://localhost:3000/cards"
+// import Highway from '@dogstudio/highway'
+// import Fade from './transition'
+
+// const H = new Highway.Core ({
+//     transition: {
+//         default: Fade
+//     }
+// })
 // const cardGrid = document.querySelector(".card-grid")
 
 // getLevelOne()

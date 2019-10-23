@@ -1,0 +1,29 @@
+{
+  "name": "cardback_project",
+  "version": "1.0.0",
+  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "main": "swup.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {
+    "@dogstudio/highway": "^2.1.3",
+    "gsap": "^2.1.3",
+    "swup": "^2.0.7"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raza23/mod3_project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/raza23/mod3_project/issues"
+  },
+  "homepage": "https://github.com/raza23/mod3_project#readme"
+}
