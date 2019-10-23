@@ -3,15 +3,17 @@ const gameDiv = document.querySelector("#game")
 const cardsUrl = "http://localhost:3000/cards"
 // const cardGrid = document.querySelector(".card-grid")
 
-// getLevelOne()
-getLevelTwo()
+getLevelOne()
+// getLevelTwo()
 
 function getLevelOne() {
     return fetch(cardsUrl)
     .then(resp => resp.json())
     .then(function(cards) {
         let filteredCards = cards.filter(card => card.level === 1)
-        filteredCards.concat(filteredCards).sort(() => 0.5 - Math.random()).forEach(card => renderCard(card))
+        let doubled = filteredCards.concat(filteredCards)
+        shuffleCards(doubled)
+        .forEach(card => renderCard(card))
     })
 }
 
@@ -21,8 +23,6 @@ function getLevelTwo() {
     .then(function(cards) {
         let filteredCards = cards.filter(card => card.level === 2)
         let doubled = filteredCards.concat(filteredCards)
-        // doubled.sort(() => 0.5 - Math.random())
-        // .forEach(card => renderCard(card))
         shuffleCards(doubled)
         .forEach(card => renderCard(card))
     })
