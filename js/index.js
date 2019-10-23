@@ -13,10 +13,16 @@ navDiv.appendChild(shuffleButton)
 let currentLevelCards = []
 
 shuffleButton.addEventListener('click', function(e) {
-    let cardDiv = document.querySelector('div.card')
-    cardGrid.removeChild(cardDiv)
+    let cardGrid = document.querySelector(".card-grid")
+    removeChildren(cardGrid)
     shuffleCards(currentLevelCards).forEach(card => renderCard(card))
 })
+
+function removeChildren(parentNode) {
+    while(parentNode.firstChild) {
+        parentNode.removeChild(parentNode.firstChild)
+    }
+}
 
 getLevelOne()
 // getLevelTwo()
