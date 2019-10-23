@@ -53,7 +53,10 @@ function getLevelTwo() {
         let filteredCards = cards.filter(card => card.level === 2)
         let doubled = filteredCards.concat(filteredCards)
         shuffleCards(doubled)
-        .forEach(card => renderCard(card))
+        .forEach(card => {
+            renderCard(card)
+            currentLevelCards.push(card)
+        })
     })
 }
 
