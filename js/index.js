@@ -30,11 +30,15 @@ const timer = document.querySelector('.timer')
 // const cardGrid = document.querySelector(".card-grid")
 
 // getLevelOne()
-getLevelTwo()
+getLevelTwoCards()
 
-function getLevelOne() {
+function getAllCards() {
     return fetch(cardsUrl)
     .then(resp => resp.json())
+}
+
+function getLevelOneCards() {
+    getAllCards()
     .then(function(cards) {
         let filteredCards = cards.filter(card => card.level === 1)
         let doubled = filteredCards.concat(filteredCards)
@@ -46,9 +50,8 @@ function getLevelOne() {
     })
 }
 
-function getLevelTwo() {
-    return fetch(cardsUrl)
-    .then(resp => resp.json())
+function getLevelTwoCards() {
+    getAllCards()
     .then(function(cards) {
         let filteredCards = cards.filter(card => card.level === 2)
         let doubled = filteredCards.concat(filteredCards)
