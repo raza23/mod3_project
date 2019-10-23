@@ -21,6 +21,12 @@ h1 {
     word-spacing: 10px;
 }
 
+h3 {
+    text-align: center;
+    letter-spacing: 5px;
+
+}
+
 div#game {
     display: grid;
     grid-template-columns: 1fr;

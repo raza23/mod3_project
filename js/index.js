@@ -24,6 +24,9 @@ function removeChildren(parentNode) {
     }
 }
 
+const clickCounter = document.querySelector('.clicks')
+// const cardGrid = document.querySelector(".card-grid")
+
 getLevelOne()
 // getLevelTwo()
 
@@ -90,13 +93,24 @@ function flipCard(e) {
             secondCard.removeEventListener('click', flipCard);
         } else {
             setTimeout(() => {
-            firstCard.classList.remove('flip');
-            secondCard.classList.remove('flip');
+                firstCard.classList.remove('flip');
+                secondCard.classList.remove('flip');
             }, 1200)
         }
     }
+
 }
 
+
+let clickCount = 0
+clickCounter.textContent = `Clicks: ${clickCount}`
+document.addEventListener('click', function(e){
+    console.log(e.target)
+    if (e.target.className === 'back-image'){
+        clickCount++
+        clickCounter.textContent = `Clicks: ${clickCount}`
+    }
+})
 
 
 
