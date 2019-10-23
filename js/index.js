@@ -1,4 +1,3 @@
-
 const body = document.querySelector('body')
 const gameDiv = document.querySelector("#game")
 const cardsUrl = "http://localhost:3000/cards"
@@ -134,15 +133,6 @@ document.addEventListener('click', function(e){
         clickCounter.textContent = `Clicks: ${clickCount}`
     }
 })
-
-
-
-
- 
-
-
-
-
 
 
 
