@@ -9,9 +9,13 @@ shuffleButton.innerText = 'Re-shuffle'
 navDiv.style="width:100%; height:10%; border: none"
 navDiv.appendChild(shuffleButton)
 
-const numberOfCards = 24
 let flippedCards = 0
 let currentLevelCards = []
+
+// getLevelOneCards()
+// getLevelTwoCards()
+getLevelThreeCards()
+// let numberOfCards;
 
 shuffleButton.addEventListener('click', function(e) {
     let cardGrid = document.querySelector(".card-grid")
@@ -28,9 +32,6 @@ function removeChildren(parentNode) {
 const clickCounter = document.querySelector('.clicks')
 const timer = document.querySelector('.timer')
 // const cardGrid = document.querySelector(".card-grid")
-
-// getLevelOne()
-getLevelTwoCards()
 
 function getAllCards() {
     return fetch(cardsUrl)
@@ -54,6 +55,19 @@ function getLevelTwoCards() {
     getAllCards()
     .then(function(cards) {
         let filteredCards = cards.filter(card => card.level === 2)
+        let doubled = filteredCards.concat(filteredCards)
+        shuffleCards(doubled)
+        .forEach(card => {
+            renderCard(card)
+            currentLevelCards.push(card)
+        })
+    })
+}
+
+function getLevelThreeCards() {
+    getAllCards()
+    .then(function(cards) {
+        let filteredCards = cards.filter(card => card.level === 3)
         let doubled = filteredCards.concat(filteredCards)
         shuffleCards(doubled)
         .forEach(card => {
@@ -123,7 +137,6 @@ function flipCard(e) {
 
 }
 
-
 let clickCount = 0;
 let watch = new Timer(timer);
 let timerIsOn = false;
@@ -141,7 +154,7 @@ document.addEventListener('click', function(e){
         // debugger;
         clickCount++
         clickCounter.textContent = `Clicks: ${clickCount}`
-        if (numberOfCards === flippedCards){
+        if (currentLevelCards.length === flippedCards){
             watch.stop()
         }
     }
