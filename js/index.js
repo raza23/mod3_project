@@ -9,6 +9,8 @@ shuffleButton.innerText = 'Re-shuffle'
 navDiv.style="width:100%; height:10%; border: none"
 navDiv.appendChild(shuffleButton)
 
+const numberOfCards = 24
+let flippedCards = 0
 let currentLevelCards = []
 
 shuffleButton.addEventListener('click', function(e) {
@@ -27,8 +29,8 @@ const clickCounter = document.querySelector('.clicks')
 const timer = document.querySelector('.timer')
 // const cardGrid = document.querySelector(".card-grid")
 
-getLevelOne()
-// getLevelTwo()
+// getLevelOne()
+getLevelTwo()
 
 function getLevelOne() {
     return fetch(cardsUrl)
@@ -102,7 +104,8 @@ function flipCard(e) {
         if (firstCard.dataset.name === secondCard.dataset.name){
             firstCard.removeEventListener('click', flipCard);
             secondCard.removeEventListener('click', flipCard);
-            count = 0
+            flippedCards += 2;
+            count = 0;
         } else {
             setTimeout(() => {
                 firstCard.classList.remove('flip');
@@ -132,6 +135,9 @@ document.addEventListener('click', function(e){
         // debugger;
         clickCount++
         clickCounter.textContent = `Clicks: ${clickCount}`
+        if (numberOfCards === flippedCards){
+            watch.stop()
+        }
     }
 })
 
