@@ -76,3 +76,18 @@ div#game {
 .front-image {
     transform: rotateY(180deg);
 }
+
+.shuffle-button {
+    background-color: white;
+    border: none;
+    color: #008CBA;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    margin: 0 auto;
+    border-radius: 5px;
+}
