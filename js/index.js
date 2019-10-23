@@ -20,8 +20,16 @@ function getLevelTwo() {
     .then(resp => resp.json())
     .then(function(cards) {
         let filteredCards = cards.filter(card => card.level === 2)
-        filteredCards.concat(filteredCards).sort(() => 0.5 - Math.random()).forEach(card => renderCard(card))
+        let doubled = filteredCards.concat(filteredCards)
+        // doubled.sort(() => 0.5 - Math.random())
+        // .forEach(card => renderCard(card))
+        shuffleCards(doubled)
+        .forEach(card => renderCard(card))
     })
+}
+
+function shuffleCards(cards) {
+    return cards.sort(() => 0.5 - Math.random())
 }
 
 function renderCard(card) {
@@ -60,7 +68,7 @@ function flipCard(e) {
             setTimeout(() => {
             firstCard.classList.remove('flip');
             secondCard.classList.remove('flip');
-            }, 1500)
+            }, 1200)
         }
     }
 

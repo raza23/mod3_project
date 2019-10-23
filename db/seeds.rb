@@ -41,4 +41,4 @@ princeton = Card.create(name: 'Princeton', level:2, image_src: 'images/princeton
 hanaa = Card.create(name: 'Hanaa',level:2,image_src: 'images/hanaaS.jpeg')
 shivang = Card.create(name: 'Shivang',level:2,image_src: 'images/shivangD.png')
 evans = Card.create(name: 'Evans',level:2, image_src: 'images/evansW.jpeg')
-maddie = Card.create(name: 'Maddie', level: 2, image_src: 'images/shivangD.png')
+maddie = Card.create(name: 'Maddie', level: 2, image_src: 'images/maddie.png')
