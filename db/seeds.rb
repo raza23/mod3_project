@@ -8,9 +8,10 @@
 
 
 ## 
+Card.delete_all
 
-back1 = Card.create(name:"Back of Card",level:1,image_src:'images/cardBack.jpg')
-back2 = Card.create(name:"Back of Card",level:2,image_src:'images/cardBack.jpg')
+# back1 = Card.create(name:"Back of Card",level:1,image_src:'images/cardBack.jpg')
+# back2 = Card.create(name:"Back of Card",level:2,image_src:'images/cardBack.jpg')
 
 
 ### LEVEL 1
@@ -34,9 +35,10 @@ raza = Card.create(name: 'Raza',level: 2,image_src:'images/razaS.jpeg')
 mark = Card.create(name: 'Mark',level: 2 ,image_src:'images/Mark.jpeg')
 alex = Card.create(name: 'Alex',level: 2,image_src:'images/Alex.jpeg')
 andrew = Card.create(name: 'Andrew',level: 2,image_src: 'images/AndrewK.png')
-nick = Card.create(name: 'Nick', level:2,image_src: 'images/NickL.png')
+nick = Card.create(name: 'Nick', level:2,image_src: 'images/nick.jpeg')
 andrea = Card.create(name: 'Andrea', level: 2,image_src: 'images/AndreaT.jpeg')
 princeton = Card.create(name: 'Princeton', level:2, image_src: 'images/princeton.jpeg')
 hanaa = Card.create(name: 'Hanaa',level:2,image_src: 'images/hanaaS.jpeg')
 shivang = Card.create(name: 'Shivang',level:2,image_src: 'images/shivangD.png')
 evans = Card.create(name: 'Evans',level:2, image_src: 'images/evansW.jpeg')
+maddie = Card.create(name: 'Maddie', level: 2, image_src: 'images/shivangD.png')
