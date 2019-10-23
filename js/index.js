@@ -12,6 +12,9 @@ navDiv.appendChild(shuffleButton)
 
 let currentLevelCards = []
 
+// getLevelOneCards()
+getLevelTwoCards()
+
 shuffleButton.addEventListener('click', function(e) {
     let cardGrid = document.querySelector(".card-grid")
     removeChildren(cardGrid)
@@ -26,14 +29,14 @@ function removeChildren(parentNode) {
 
 const clickCounter = document.querySelector('.clicks')
 const timer = document.querySelector('.timer')
-// const cardGrid = document.querySelector(".card-grid")
 
-getLevelOne()
-// getLevelTwo()
-
-function getLevelOne() {
+function getAllCards() {
     return fetch(cardsUrl)
     .then(resp => resp.json())
+}
+
+function getLevelOneCards() {
+    getAllCards()
     .then(function(cards) {
         let filteredCards = cards.filter(card => card.level === 1)
         let doubled = filteredCards.concat(filteredCards)
@@ -45,14 +48,16 @@ function getLevelOne() {
     })
 }
 
-function getLevelTwo() {
-    return fetch(cardsUrl)
-    .then(resp => resp.json())
+function getLevelTwoCards() {
+    getAllCards()
     .then(function(cards) {
         let filteredCards = cards.filter(card => card.level === 2)
         let doubled = filteredCards.concat(filteredCards)
         shuffleCards(doubled)
-        .forEach(card => renderCard(card))
+        .forEach(card => {
+            renderCard(card)
+            currentLevelCards.push(card)
+        })
     })
 }
 
@@ -99,28 +104,25 @@ function flipCard(e) {
             }, 1200)
         }
     }
-
 }
-
 
 let clickCount = 0;
 let watch = new Timer(timer);
 
 clickCounter.textContent = `Clicks: ${clickCount}`
 document.addEventListener('click', function(e){
-    console.log(e.target)
+    // console.log(e.target)
     let timerIsOn = false;
     if (e.target.className === 'back-image' && !timerIsOn ){
         clickCount++
         clickCounter.textContent = `Clicks: ${clickCount}`
         timerIsOn = true
         watch.start()
-    } else if (e.target.className === 'back-image'){
+    } if (e.target.className === 'back-image'){
         clickCount++
         clickCounter.textContent = `Clicks: ${clickCount}`
     }
 })
-
 
 function Timer(elem){
     let time = 0;
@@ -129,7 +131,7 @@ function Timer(elem){
 
     function update(){
         time += timePassed();
-        var formattedTime = formatter(time);
+        let formattedTime = formatter(time);
         elem.textContent = 'Timer: ' +formattedTime;
     }
     function timePassed(){
@@ -147,7 +149,6 @@ function Timer(elem){
         if (minutes.length < 2){
             minutes = '0' + minutes;
         }
-
         if (seconds.length < 2){
             seconds = '0' + seconds;
         }
@@ -155,7 +156,6 @@ function Timer(elem){
         while (milliseconds.length < 3){
             milliseconds = '0'+ milliseconds
         }
-
         return minutes + ' : ' + seconds + ' . ' + milliseconds
     }
 
