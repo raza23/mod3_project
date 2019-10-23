@@ -66,6 +66,7 @@ function clickAndTimerReset(){
     clickCount = 0
     timer.textContent='Timer: 00 : 00 . 000'
     clickCounter.textContent=clickCount
+    timerIsOn = false;
 }
 
 function renderCard(card) {
