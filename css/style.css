@@ -75,7 +75,7 @@ div#game {
     padding: 20px;
     position: absolute;
     border-radius: 5px;
-    background: rgb(53, 166, 185);
+    background: rgb(0, 178, 238);
     backface-visibility: hidden;
 }
   
@@ -87,7 +87,7 @@ button {
     background-color: white;
     border: none;
     color: #008CBA;
-    padding: 5px 95px 5px 95px;
+    padding: 1px 105px 1px 105px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
