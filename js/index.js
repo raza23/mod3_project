@@ -64,7 +64,7 @@ function renderCard(card) {
     const cardGrid = document.querySelector(".card-grid")
     let cardDiv = document.createElement("div")
     let backImg = document.createElement('img')
-    backImg.src = 'images/cardBack.jpg'
+    backImg.src = 'images/octocat2.png'
     backImg.className = "back-image"
     cardDiv.className = "card"
     cardDiv.dataset.name = card.name
