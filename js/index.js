@@ -1,6 +1,29 @@
 
+const body = document.querySelector('body')
 const gameDiv = document.querySelector("#game")
 const cardsUrl = "http://localhost:3000/cards"
+const cardGrid = document.querySelector(".card-grid")
+const navDiv = document.querySelector('#navigation')
+let shuffleButton = document.createElement('button')
+shuffleButton.className = 'shuffle-button'
+shuffleButton.innerText = 'Re-shuffle'
+navDiv.style="width:100%; height:10%; border: none"
+navDiv.appendChild(shuffleButton)
+
+let currentLevelCards = []
+
+shuffleButton.addEventListener('click', function(e) {
+    let cardGrid = document.querySelector(".card-grid")
+    removeChildren(cardGrid)
+    shuffleCards(currentLevelCards).forEach(card => renderCard(card))
+})
+
+function removeChildren(parentNode) {
+    while(parentNode.firstChild) {
+        parentNode.removeChild(parentNode.firstChild)
+    }
+}
+
 const clickCounter = document.querySelector('.clicks')
 // const cardGrid = document.querySelector(".card-grid")
 
@@ -14,7 +37,10 @@ function getLevelOne() {
         let filteredCards = cards.filter(card => card.level === 1)
         let doubled = filteredCards.concat(filteredCards)
         shuffleCards(doubled)
-        .forEach(card => renderCard(card))
+        .forEach(card => {
+            renderCard(card)
+            currentLevelCards.push(card)
+        })
     })
 }
 
@@ -72,7 +98,7 @@ function flipCard(e) {
             }, 1200)
         }
     }
-    
+
 }
 
 
