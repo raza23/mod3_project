@@ -10,12 +10,16 @@ navDiv.style="width:100%; height:10%; border: none"
 navDiv.appendChild(shuffleButton)
 // const modalButton = document.querySelector('.modalButton')
 const modalYesButton = document.querySelector(".ui.positive.right.labeled.icon.button")
-
+const usersUrl = 'http://localhost:3000/users'
+let currentUser;
+let clickCount = 0;
+const timerButton = document.querySelector('.timer')
 
 let flippedCards = 0
 let currentLevelCards = []
 
 getLevelOneCards()
+getCurrentUser()
 // getLevelTwoCards()
 // getLevelThreeCards()
 // let numberOfCards;
@@ -23,6 +27,7 @@ getLevelOneCards()
 shuffleButton.addEventListener('click', function(e) {
     let cardGrid = document.querySelector(".card-grid")
     removeChildren(cardGrid)
+    updateUserStats()
     shuffleCards(currentLevelCards).forEach(card => renderCard(card))
 })
 
@@ -32,6 +37,7 @@ modalYesButton.addEventListener('click', (e) => {
     currentLevelCards = []
     getLevelOneCards()
     shuffleCards(currentLevelCards).forEach(card => renderCard(card))
+    // updateUserStats()
     // getAllCards().then(() => {
     //     // debugger
     //     if(currentLevelCards.length === 10) {
@@ -45,6 +51,21 @@ modalYesButton.addEventListener('click', (e) => {
     //     }
     // })
 })
+
+function updateUserStats() {
+    fetch(usersUrl+`/${currentUser.id}`, {
+        method: 'PATCH',
+        headers: {
+          "Content-type": "application/json",
+          "Accepts": "application/json"
+        },
+        body: JSON.stringify(
+            {
+            clicks: clickCount, 
+            time: timerButton.innerText
+        })
+    })
+}
 
 function removeChildren(parentNode) {
     while(parentNode.firstChild) {
@@ -160,13 +181,13 @@ function flipCard(e) {
 
 }
 
-let clickCount = 0;
 let watch = new Timer(timer);
 let timerIsOn = false;
 
 clickCounter.textContent = `Clicks: ${clickCount}`
+
 document.addEventListener('click', function(e){
-    console.log(e.target)
+    // console.log(e.target)
     if (e.target.className === 'back-image' && !timerIsOn){
         // debugger;
         clickCount++
@@ -179,10 +200,22 @@ document.addEventListener('click', function(e){
         clickCounter.textContent = `Clicks: ${clickCount}`
         if (currentLevelCards.length === flippedCards){
             watch.stop()
+            updateUserStats()
             $('.ui.modal').modal('show');
         }
     }
 })
+
+function getCurrentUser() {
+    fetch(usersUrl)
+    .then(resp => resp.json())
+    .then(users => {
+        // console.log(users.length)
+        currentUser = users[users.length-1]
+        console.log(currentUser.id)
+        return currentUser
+    })
+}
 
 
 

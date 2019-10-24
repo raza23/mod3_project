@@ -12,7 +12,6 @@ enterbtn.addEventListener('click',function(e){
 function legitUser(){
   
   if (value.value !== ''){
-    debugger
     fetch(post, {
       method: 'POST',
       headers: {
