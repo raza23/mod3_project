@@ -29,7 +29,15 @@ Card.delete_all
 # angular = Card.create(name: 'Angular', level:1,image_src: 'images/angular.png')
 
 
-## LEVEL 2 
+
+
+
+####
+
+raza_u = User.create(username: "Raza",clicks: '20',time: '4:20')
+justyna_u = User.create(username: "Justyna",clicks: '26',time: '5:00')
+nick_u = User.create(username: "Nick", clicks: '80', time: '9:23')
+=======
 justyna2 = Card.create(name: 'Justyna', level:2, image_src:'images/justynaK.jpeg')
 justyna3 = Card.create(name: 'Justyna', level:3, image_src:'images/justynaK.jpeg')
 raza2 = Card.create(name: 'Raza',level: 2,image_src:'images/razaS.jpeg')
@@ -54,3 +62,4 @@ evans1 = Card.create(name: 'Evans',level: 1, image_src: 'images/evansW.jpeg')
 evans3 = Card.create(name: 'Evans',level: 3, image_src: 'images/evansW.jpeg')
 maddie1 = Card.create(name: 'Maddie', level: 1, image_src: 'images/maddie.png')
 maddie3 = Card.create(name: 'Maddie', level: 3, image_src: 'images/maddie.png')
+
