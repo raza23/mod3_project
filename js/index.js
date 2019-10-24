@@ -8,19 +8,42 @@ shuffleButton.className = 'shuffle-button'
 shuffleButton.innerText = 'Re-shuffle'
 navDiv.style="width:100%; height:10%; border: none"
 navDiv.appendChild(shuffleButton)
+// const modalButton = document.querySelector('.modalButton')
+const modalYesButton = document.querySelector(".ui.positive.right.labeled.icon.button")
+
 
 let flippedCards = 0
 let currentLevelCards = []
 
-// getLevelOneCards()
+getLevelOneCards()
 // getLevelTwoCards()
-getLevelThreeCards()
+// getLevelThreeCards()
 // let numberOfCards;
 
 shuffleButton.addEventListener('click', function(e) {
     let cardGrid = document.querySelector(".card-grid")
     removeChildren(cardGrid)
     shuffleCards(currentLevelCards).forEach(card => renderCard(card))
+})
+
+modalYesButton.addEventListener('click', (e) => {
+    let cardGrid = document.querySelector(".card-grid")
+    removeChildren(cardGrid)
+    currentLevelCards = []
+    getLevelOneCards()
+    shuffleCards(currentLevelCards).forEach(card => renderCard(card))
+    // getAllCards().then(() => {
+    //     // debugger
+    //     if(currentLevelCards.length === 10) {
+    //         getLevelTwoCards()
+    //     }
+    //     if(currentLevelCards.length === 24) {
+    //         getLevelThreeCards()
+    //     }
+    //     else {
+    //         alert("There are no more levels!")
+    //     }
+    // })
 })
 
 function removeChildren(parentNode) {
@@ -156,9 +179,17 @@ document.addEventListener('click', function(e){
         clickCounter.textContent = `Clicks: ${clickCount}`
         if (currentLevelCards.length === flippedCards){
             watch.stop()
+            $('.ui.modal').modal('show');
         }
     }
 })
+
+
+
+
+
+
+
 
 
 

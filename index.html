@@ -9,35 +9,62 @@
   <title>Memory Game</title>
 
   <link rel="stylesheet" href="css/style.css">
-  <!-- <link rel=“stylesheet” href=“https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.css“/> -->
- 
-  <!-- <script src=“https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js”></script> -->
-  <!-- <script defer src=“js/jquery.min.js”></script> -->
-  
-  <!-- <script src=“https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.9/semantic.min.js”></script> -->
-  <!-- <script defer src=“js/semantic.min.js”></script> -->
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
   <script defer src="js/timer.js"></script>
   <script defer src="js/index.js"></script>
 
 </head>
 
 <body>
-    <!-- <h1>CardBack!</h1> -->
-    <div id='navigation'>
-      <!--buttons go here-->
+    <div class="ui modal">
+        <i class="close icon"></i>
+        <div class="header">
+          Game over!
+        </div>
+        <div class="image content">
+          <div class="ui medium image">
+            <img src='images/octocat2.png'>
+          </div>
+          <div class="description">
+            <div class="ui header">Good job!</div>
+            
+            <p id="stats">Here are your stats: </p>
+            <p>What would you like to do now?</p>
+
+          </div>
+        </div>
+        <div class="actions">
+          <div class="ui black deny button">
+            Show me stats
+          </div>
+          <div class="ui positive right labeled icon button">
+            Play again
+            <i class="checkmark icon"></i>
+          </div>
+        </div>
+      </div>
+  <script>$('.ui.modal').modal('hide');</script>
+    
+  <!-- <h1>CardBack!</h1> -->
+  <div id='navigation'>
+    <!--buttons go here-->
       
-      <!-- <h3 class='clicks'></h3> -->
-      <button class='clicks' type="button"></button>
-      <!-- <h3 class='timer'>Timer: 00 : 00 . 000</h3> -->
-      <button class='timer' type="button">Timer: 00 : 00 . 000</button>
+    <!-- <h3 class='clicks'></h3> -->
+    <button class='clicks' type="button"></button>
+    
+    <!-- <h3 class='timer'>Timer: 00 : 00 . 000</h3> -->
+    <button class='timer' type="button">Timer: 00 : 00 . 000</button>
+    <!-- <button class='modalButton' type="button">Modal Test</button> -->
 
     
-    </div>
+  </div>
 
   <div id="game">
-      <div class="card-grid"><!--cards go here--></div>
     
-    
+    <div class="card-grid"><!--cards go here--></div>
+     
   </div>
 
 </body>
