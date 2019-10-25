@@ -14,6 +14,7 @@ const usersUrl = 'http://localhost:3000/users'
 let currentUser;
 let clickCount = 0;
 const timerButton = document.querySelector('.timer')
+const modalStatsButton = document.querySelector(".ui.black.deny.button")
 
 let flippedCards = 0
 let currentLevelCards = []
@@ -37,6 +38,10 @@ modalYesButton.addEventListener('click', (e) => {
     currentLevelCards = []
     getLevelOneCards()
     shuffleCards(currentLevelCards).forEach(card => renderCard(card))
+})
+
+modalStatsButton.addEventListener('click', (e) => {
+    document.location.href = "./scoreboard.html";
 })
 
 function updateUserStats() {
