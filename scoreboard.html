@@ -1,24 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<style>
-    table, th, td {
-        border: 1px solid black;
-        padding: 20px ;
-        border: 1px solid black;
-        border-collapse: collapse;
-        width: 60px
-        }
-        tr {
-    height: 30px;
-    vertical-align: bottom;
-    border-bottom: 5px solid rgb(0, 0, 0);
-}
     
-    
-
-    </style>
-    
+    <link rel="stylesheet" href="css/style.css">  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -26,21 +10,30 @@
     <script defer src="js/scoreboard.js"></script>
 
 </head>
+
 <body>
-    <h1>Scores</h1>
-    <!-- <div id="scores"> PUT THEM HERE </div> -->
-    <table id ="scores">
-            <colgroup>
-              <col span="2" style="background-color:white">
-              <col style="background-color:white">
-            </colgroup>
-            <tr>
-              <th id ="usernames">Usernames</th>
-              <th id ="clicks">Clicks</th>
-              <th id ="time">Time</th>
-            </tr>
-            
-          </table>
+    <div class="scoreDiv">
+            <button class='scores' id="scores" type="button">S C O R E S</button>
+            <!-- <div id="scores"> PUT THEM HERE </div> -->
+            <table id= "scoreboardTable" class="ui very basic collapsing celled table">
+                <colgroup>
+                  <col span="100" style="background-color:white">
+                  <col style="background-color:white">
+                </colgroup>
+                <tr>
+                  <th id ="usernames">U S E R N A M E S</th>
+                  <th id ="clicks">C L I C K S</th>
+                  <th id ="time">T I M E</th>
+                </tr>
+                
+            </table>
+           
+            <form action="./index.html">
+                <button id="index" type="submit">Back to the game</button>
+            </form>
+
+    </div>
+        
     
 </body>
 </html>

@@ -37,19 +37,6 @@ modalYesButton.addEventListener('click', (e) => {
     currentLevelCards = []
     getLevelOneCards()
     shuffleCards(currentLevelCards).forEach(card => renderCard(card))
-    // updateUserStats()
-    // getAllCards().then(() => {
-    //     // debugger
-    //     if(currentLevelCards.length === 10) {
-    //         getLevelTwoCards()
-    //     }
-    //     if(currentLevelCards.length === 24) {
-    //         getLevelThreeCards()
-    //     }
-    //     else {
-    //         alert("There are no more levels!")
-    //     }
-    // })
 })
 
 function updateUserStats() {
