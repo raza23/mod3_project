@@ -23,8 +23,7 @@ function showscores(json){
 
         const time = document.createElement('tr')
         time.textContent = user.time
-        time1.appendChild(time)
-        
+        time1.appendChild(time)  
     });
 }
 

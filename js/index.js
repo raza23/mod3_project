@@ -14,14 +14,15 @@ const usersUrl = 'http://localhost:3000/users'
 let currentUser;
 let clickCount = 0;
 const timerButton = document.querySelector('.timer')
+const modalStatsButton = document.querySelector(".ui.black.deny.button")
 
 let flippedCards = 0
 let currentLevelCards = []
 
-getLevelOneCards()
+// getLevelOneCards()
 getCurrentUser()
 // getLevelTwoCards()
-// getLevelThreeCards()
+getLevelThreeCards()
 // let numberOfCards;
 
 shuffleButton.addEventListener('click', function(e) {
@@ -37,19 +38,10 @@ modalYesButton.addEventListener('click', (e) => {
     currentLevelCards = []
     getLevelOneCards()
     shuffleCards(currentLevelCards).forEach(card => renderCard(card))
-    // updateUserStats()
-    // getAllCards().then(() => {
-    //     // debugger
-    //     if(currentLevelCards.length === 10) {
-    //         getLevelTwoCards()
-    //     }
-    //     if(currentLevelCards.length === 24) {
-    //         getLevelThreeCards()
-    //     }
-    //     else {
-    //         alert("There are no more levels!")
-    //     }
-    // })
+})
+
+modalStatsButton.addEventListener('click', (e) => {
+    document.location.href = "./scoreboard.html";
 })
 
 function updateUserStats() {
