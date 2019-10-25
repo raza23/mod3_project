@@ -19,10 +19,10 @@ const modalStatsButton = document.querySelector(".ui.black.deny.button")
 let flippedCards = 0
 let currentLevelCards = []
 
-getLevelOneCards()
+// getLevelOneCards()
 getCurrentUser()
 // getLevelTwoCards()
-// getLevelThreeCards()
+getLevelThreeCards()
 // let numberOfCards;
 
 shuffleButton.addEventListener('click', function(e) {
