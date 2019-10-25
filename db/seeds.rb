@@ -34,9 +34,9 @@ Card.delete_all
 
 ####
 
-raza_u = User.create(username: "Raza",clicks: '20',time: '4:20')
-justyna_u = User.create(username: "Justyna",clicks: '26',time: '5:00')
-nick_u = User.create(username: "Nick", clicks: '80', time: '9:23')
+raza_u = User.create(username: "Raza",clicks: '20',time: 'Timer: 4:20:00*')
+justyna_u = User.create(username: "Justyna",clicks: '26',time: 'Timer: 5:00:00*')
+nick_u = User.create(username: "Nick", clicks: '80', time: 'TIme: 9:23:00*')
 ########
 justyna2 = Card.create(name: 'Justyna', level:2, image_src:'images/justynaK.jpeg')
 justyna3 = Card.create(name: 'Justyna', level:3, image_src:'images/justynaK.jpeg')

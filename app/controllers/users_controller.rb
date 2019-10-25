@@ -11,13 +11,15 @@ class UsersController < ApplicationController
 
   def create
     user = User.new(user_params)
+    #  byebug
     if user.save
     #   flash[:success] = "Have fun"
-      redirect_to user
+      # redirect_to user
+      render json: user, status: 200
     else
-      render 'new'
+      # render 'new'
+      render json: {'msg': 'didnt work brah'}, status: 404
     end
-    @currentUser = User.last
   end
 
   def update

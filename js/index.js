@@ -4,6 +4,7 @@ const cardsUrl = "http://localhost:3000/cards"
 const cardGrid = document.querySelector(".card-grid")
 const navDiv = document.querySelector('#navigation')
 let shuffleButton = document.createElement('button')
+
 shuffleButton.className = 'shuffle-button'
 shuffleButton.innerText = 'Re-shuffle'
 navDiv.style="width:100%; height:10%; border: none"
